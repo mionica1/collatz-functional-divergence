@@ -17,4 +17,4 @@
 # As Final scope is to image and analyze Collatz Functional Divergence - Will see For Any Integers into first array messages are different.
 # We chose "alert" as to be faster and to can copy and paste for Analytic. 
 # ***
-# Murgu 1D Array can be Infinity Per 6 as Index - impossible coputational - but - we can approach by using BigInt and trasnsform Javascript Handler to handle multiple Murgu 1D Array. 
+# Murgu 1D Array can be Infinity Per 6 as Index - impossible computational - but - we can approach by using BigInt and transform Javascript Handler, to handle multiple Murgu 1D Array. 
