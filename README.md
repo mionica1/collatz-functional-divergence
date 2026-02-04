@@ -1,6 +1,10 @@
 # collatz-functional-divergence
-# backed as help by Murgu 1D Array 
-# Project For Future 
+# an Interactive HTML to show and understand collatz-functional-divergence 
+# backed as help by 2 Murgu 1D Array Everyone Handled by a Proper Javascript as to obtain separate message.
+# Project For Future as 
+# Murgu 1D Array - Theoretic can be extended to "Infinity Per 6" by an Javascript Generator. 
+# We are limited now and into future by our Computational Power - but - 
+# Computational Power Evolution can be linked now to Murgu 1D Array as METER and TESTER.
 # maybe important only for H_Intel proud state as 
 # Collatz Conjecture is Solved 
 # By Marker USA Murgu Arrows 
