@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+  <title>Collatz Conjecture Lens Mirroring Infinity</title>
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no" />
+
+<link href="https://fonts.googleapis.com/css? family=Segoe+UI:wght@400;700 & display=swap" rel="stylesheet" />
+
+<!-- &Sfr; &sfr;    <link href="https://fonts.googleapis.com/css?family=Segoe+UI+Emoji&display=swap" rel="stylesheet" /> -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTB5JXRP');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<!-- &Sfr; &sfr; -->
+
+
+
+
+
+<script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+
+  <script rel=
+  "code.jquery.com">
+          </script>
+       
+
+
+  
+ 
+   
+      
+<style> 
+
+
+@import "https://fonts.googleapis.com/css2?family=Nabla&display=swap";
+@font-palette-values --blue-nabla {
+  font-family: Nabla;
+  base-palette: 2; /* this is Nabla's blue palette */
+}
+
+@font-palette-values --grey-nabla {
+  font-family: Nabla;
+  base-palette: 3; /* this is Nabla's grey palette */
+}
+
+@keyframes animate-palette {
+  from {
+    font-palette: --grey-nabla;
+  }
+
+  to {
+    font-palette: --blue-nabla;
+  }
+}
+
+ .pp1 {
+  font-family: "Nabla", fantasy;
+  font-size: 5rem;
+  margin: 0;
+  text-align: center;
+  animation: animate-palette 4s infinite alternate linear;
+}
+  body {
+  
+  font-family: 'Segoe UI Emoji', sans-serif;
+  font-family: "Times New Roman", 'Segoe UI',Times, serif, "Lucida Sans", sans-serif;
+
+  display: grid;
+}
+.container {
+  display: grid;
+  grid-template-columns: max-content min-content 1fr 1fr;
+  /*  Defines 3 equal columns */
+  /*  grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];*/
+  grid-template-rows: auto auto auto;
+  /* Rows size based on content */
+  gap: 10px;
+  grid-template-areas: "header header header header" "sidebar content content content " "sidebar footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  border-style: solid;
+  border: #110201;
+  border-width: thick;
+}
+
+.sidebar {
+  grid-area: sidebar;
+   margin-top: 0px;
+  border-left: #2fd4d4;
+  margin-left: 0;
+
+  float: left;
+ 
+}
+
+.content {
+  grid-area: content;
+
+  margin: 0px;
+  
+ 
+}
+
+.footer {
+  grid-area: footer;
+  width: 100%;
+}
+
+img {
+  margin: 5px;
+  display: block;
+  align-self: center;
+  position: relative;
+}
+
+hr {
+
+  width: 40%;
+display: block;
+  margin: 0.3em;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-style: groove;
+  border-color: rgb(49, 42, 2);
+  border-width: 3px;
+}
+
+.box0 {
+  background: url("../img/back-g-06.jpg");
+  background-repeat:repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+
+.box1 {
+  background: url("../img/marb/marb000.jpeg");
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  transform: translate(30px, 20px) rotate(-0.2deg);
+}
+
+.box1:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.2deg);
+}
+
+.box11 {
+  background: url("../img/marb/marb000.jpeg");
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 2px;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 2px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 5px 7px 5px -5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  transform: translate(6px, 8px) rotate(-0.1deg);
+}
+
+.box11:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.1deg);
+}
+
+.box2 {
+  margin-left: 4px;
+  background: url("../img/marb/marb-0005.jpeg");
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  transform: translate(30px, 20px) rotate(-0.2deg);
+}
+
+.box2:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.1deg);
+}
+
+
+
+.box3 {
+  margin-left: 4px;
+  background: url("../img/marb/sand1.jpeg");
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  transform: translate(30px, 20px) rotate(-0.2deg);
+}
+
+.box3:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.1deg);
+}
+
+
+
+
+.box4 {
+  margin-left: 4px;
+  background: url("../img/marb/images-005.jpeg");
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  transform: translate(30px, 20px) rotate(-0.3deg);
+}
+
+.box4:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.3deg);
+}
+
+.boxn {
+  margin-left: 4px;
+  color: #020202;
+  background-repeat: repeat;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 5px;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  transform: translate(30px, 20px) rotate(-0.4deg);
+}
+
+.boxn:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.4deg);
+}
+
+
+
+.buttonc {
+  background-color: #2fd4d4;
+  color: black;
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  font-size: 18px;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px;
+}
+
+.buttonc:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+}
+
+.buttona {
+  background-color: #ebbbe0;
+  color: black;
+  cursor: wait;
+  transition: all ease-in-out 300ms;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px;
+}
+
+.buttona:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+}
+
+.buttonaa {
+  background-color: #ebbbe0;
+  color: black;
+  cursor: wait;
+  transition: all ease-in-out 300ms;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px;
+  transform: translate(30px, 20px) rotate(-0.5deg);
+}
+
+.buttonaa:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.2deg);
+}
+
+.buttonra {
+  background-color: #54a396;
+  color: black;
+  cursor: wait;
+  transition: all ease-in-out 300ms;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px;
+  transform: translate(30px, 20px) rotate(-0.3deg);
+}
+
+.buttonra:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px) rotate(0.2deg);
+}
+
+.buttonrr {
+  background-color: #e0b460;
+  color: black;
+  cursor: wait;
+  transition: all ease-in-out 300ms;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px;
+  transform: translate(30px, 20px) rotate(-0.4deg);
+}
+
+.buttonrr:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+
+    transform: translate(0px, 60px) rotate(0.4deg);
+}
+
+.buttonrrr {
+  background-color: #9be415;
+  color: black;
+  cursor: wait;
+  transition: all ease-in-out 300ms;
+  font-size: 20px;
+  font-weight: bolder;
+  position: relative;
+  padding: 5px;
+  transform: translate(30px, 20px) rotate(-2deg);
+}
+
+.buttonrrr:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+}
+
+.buttonac {
+  background: url("../img/back-g-06.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  background-color: transparent;
+  border-left-style: solid;
+  border-left: 10px solid #b1b3ae;
+  border-radius: 5px;
+  box-shadow: 10px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.buttonac:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+}
+
+.boxinvers {
+  background-color: #060008;
+  box-shadow: 1px 37px 20px -20px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+  
+  color: aliceblue;
+  margin: 5px;
+ color: #2fd4d4;
+}
+
+.boxinvers:hover {
+  box-shadow: 2px 7px 10px -10px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+}
+
+.boxnorm {
+  border-collapse: collapse;
+  background-color: #dcbeeb;
+  align-content: center;
+  padding: 3px;
+  box-shadow: 1px 37px 20px -20px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, 6px);
+  display: flex;
+  margin: 5px;
+}
+
+.tabllle {
+  font-size: 12px;
+  font-weight: bold;
+  border-width: 2px;
+  text-align: center;
+  position: relative;
+  left: 2px;
+  right: 2px;
+  transform: translateX(2px);
+}
+
+th {
+  text-align: right;
+  padding: 2pt;
+}
+
+td {
+  border-width: 1px;
+  padding: 2pt;
+  text-align: right;
+}
+
+tr {
+  border-width: 1px;
+  padding: 2pt;
+  text-align: right;
+}
+table, tr, td { border:1px solid black; font-size:16px;text-align: center; }
+/*# sourceMappingURL=ubstyl.css.map */
+ul li {
+   list-style-type: none;
+      color: rgb(59, 10, 27);
+    margin: 0;
+  padding: 0;
+    
+      font-size: 26px;
+    }
+
+     </style>
+    
+
+       
+</head>
+
+<body> 
+<script type="module" src= "bmapa-coll.js" charset="utf-8" > </script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTB5JXRP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+
+ <div class="container box0" style="opacity: 0.82;z-index: 2;">
+
+<div class="header box1" style="opacity: 92%;z-index: 2;z-index: 1;">
+<h1 class="box3" style="font-size: 30px; opacity: 91%;" > <strong> <i>
+  Infinity Marker USA Murgu Arrows <br><hr><hr><br>
+    Human Intel 2024 Logical Beauty <br> Infinity Table2To3 <br><hr> 
+    Marker USA Murgu Arrow Arrays <br><hr><br>
+    Collatz Conjecture Lens Mirroring Infinity  <br> limited only by our computational power , but <br>
+    Legacy To Infinity DEMONSTRATED and Contained INTO <br>
+    Infinity Murgu Double Linear as Arrows Down to Unity <br> AS <br>
+    Collatz Conjecture 1D ARRAY <br><hr>
+      Murgu Collatz Conjecture Pocket Map. <br>
+  
+
+<br>- Author: Physicist Ion Murgu From Ohio USA <hr><br>
+  NOTE <br>
+  Now using old https://collatzconjectureend.com/colusa/ and THIS ONE <br>
+  can play Collatz Conjecture Functional Divergence <hr>
+  testing in this one Integers what are out of array into old one. <hr> <br>
+  NOW we cover already 8000 grids - that mean we can automatic(instantly) get <br>
+  Collatz Patterns <br> for odds small then 48000 (Odd 47999)<br> 
+  is right a small part will fall out of our actual <br>
+  Collatz Conjecture 1D Array <br>
+  but we are yet waiting for a strong server to can get to 2 000 000 Grids or more.  
+  </i> </strong>
+   </h1>   <hr>  <br>
+ <h1 class="box3" style="font-size: 36 px; opacity: 91%;">
+<b> <em>
+Science Beauty for <br>
+Marker USA Murgu Arrows Array <br><hr><br> 
+Collatz Conjecture Murgu Pocket Map <br> <hr>
+Stand in- Collatz Conjecture Contained into <br><br>
+1D Array <br><hr><br>
+If anybody Math skilled don't understand yet <br> Collatz Conjecture Unique 
+Solution - Murgu Table2To3 <br>
+Guarded by Infinity Murgu Table2To3 <br>
+Then follow old - Marker USA Murgu Arrow <br> to understand <br>
+Infinity Marker Murgu Arrows Enclose all Collatz Patterns Nodes in <br>
+Collatz Conjecture 1D Array <hr><hr><hr>
+PROOF OF PROOF as Guarded by <br>
+ALL MATHEMATICS Rigor Collatz Conjecture Solution <br>
+Infinity Murgu Table2To3. <hr><hr>
+</em> </b>
+
+ </h1><br>
+
+  
+</div> <br><hr> 
+<!--      -->
+<br> 
+  <div class="sidebar box2" style="font-size: 28px;width: 40px;">
+
+<ul style="list-style-type: none;">
+
+  
+<li>C</li>
+
+<li>O</li>
+
+<li>L
+</li>
+<li>L
+</li>
+<li>A
+</li>
+<li>T
+</li>
+<li>Z
+</li>
+<li> *
+</li>
+<li>*
+
+</li>
+<li>C
+</li>
+
+<li>o
+
+</li>
+
+<li>n
+</li>
+<li>j
+</li>
+<li>e
+</li>
+<li>c
+</li>
+<li>t
+</li>
+<li>u
+</li>
+
+<li>r
+</li>
+
+<li>e
+
+</li>
+
+<li>*
+</li>
+<li>*
+</li>
+<li>E
+</li>
+<li>N
+</li>
+<li>D
+</li>
+
+</ul>
+ 
+
+</div>
+  
+ <div class="content box3" style="opacity: 96%;z-index: 2;">
+
+    <div class=" box3" style="opacity: 96%;z-index: 1;">
+  <h1 class="box3" style="font-size: 28px; opacity: 91%;" >
+ Collatz Conjecture Unique Solution <br> Murgu Table2To3 <br><hr>
+
+ but here we are to introduce one of its new Mathematics tool <br>
+  Marker USA Murgu Arrow Array <br><hr><br>
+  obtained using : <br>
+  Murgu Infinity Table2To3Functions <br>
+<br><hr>
+((2<sup>(2k+2)</sup>[1+6i]) - 1)  = 3 Q<sub>i</sub>  <br> 
+((2<sup>(2l+1)</sup>[5+6j]) - 1)  = 3 Q<sub>j</sub> <br> <hr>
+ and Murgu Collatz Conjecture Grids LET's Formulas <br> <hr><br>
+ Grouped 2 by 2 for k=l = 0 to &infin; like Arrows heading Unity <br>
+  those solved Collatz Conjecture by covering <br>
+  All Positive Integers Domain. <br><hr><br>
+
+ LET<sub>1</sub><sub>i</sub> = (1 + 6i) <br>
+ LDN<sub>i</sub> = (3 + 6i) <br>
+LET<sub>2</sub><sub>i</sub> = (5 + 6i) <br><br> 
+   Will Keep also any old material about <br>
+   Collatz Conjecture Unique Solution <br> Murgu Table2To3 <br>
+   and remind - if not understood yet - I am here to explain. <br>
+   First Marker USA Murgu Arrow Array <br>
+   which generate Collatz Conjecture Murgu Pocket Map. <br><hr><br>   
+     All Collatz Conjecture Murgu Formulas authority over Collatz Conjecture are demonstrated. <br>
+     Murgu Collatz Conjecture Inverse Method and Formulas revealed Logical Dead Nodes Propieties <br>
+     1. Logical Dead Nodes do not have Up Collatz Connection. <br>
+
+     2. For Every Logical Dead Node a Collatz Pattern started will not pass via Collatz Procedures 
+     another Logical Dead Node.  <br> 
+     
+     3. For every Logical Dead Node first Down Connection will be only and only an LET. <br>
+
+     4. Do not have  2 or more Logical Dead Node for which first LET Connection to be the same. <br>
+     You will see lots of Collatz Conjecture Formulas which pretend to solve Collatz Conjecture <br> <hr><br> 
+     but neither one are coming with all Math rigor demonstrations , <br>
+     but as proofs - we can't proof Infinity margin - <br> 
+     Murgu Table2To3 and Infinity Murgu Table2To3 , instead , including Collatz Conjecture Murgu Formulas 
+     are Demonstrated. <br>
+     also Collatz Conjecture Murgu Grids is first Conditional which make <br>
+     Murgu Table2To3 - Collatz Conjecture Unique Solution <br><hr><br>
+     Marker USA Murgu Arrow Array or Collatz Conjecture One-Dimensional Array <br><hr><br>
+     came as a result revelation <br>
+     and for sure became All Science Good.    
+
+  </h1>
+
+    </div>  <hr><br><hr><br>
+
+<div>
+<h1 class="box4" style="z-index: 1; font-size: 28;opacity: 94%;">
+  <Strong> <b>
+
+Above Equations for k=l will define "Marker USA Murgu Arrow"
+  <br><hr>
+((2<sup>(2k+2)</sup>[1+6i]) - 1)  = 3 Q<sub>i</sub> <br> 
+((2<sup>(2k+1)</sup>[5+6j]) - 1)  = 3 Q<sub>j</sub> <br> <hr>
+and for k=l = 0 to &infin; - Collatz Conjecture Nodes Murgu Formulas<br>
+Infinity Marker USA Murgu Arrows <br><hr>
+ will reveal all <br> Collatz Conjectures Nodes <br>
+as Evens as Conjecture Nodes are defined as <br>
+  (2<sup>t</sup>)Q<sub>i</sub> and <br>
+
+(2<sup>t</sup>)Q<sub>j</sub> <br>
+Above Equations as, <br>Collatz Conjecture Nodes Murgu Formulas <br>
+ COVER all Positive Integers if add <br>
+ (2<sup>&infin;</sup>)Q<sub>i</sub> and <br>
+
+(2<sup>&infin;</sup>)Q<sub>j</sub> <br>
+  </b>
+
+  </Strong>
+
+
+</h1>
+
+</div>
+
+<!--       -->
+     <div class=" box3" style="opacity: 96%;z-index: 1;">
+        <h3 class="box2 buttonra" style="font-size: 22px;color: black;opacity: 97%;z-index: 1;">
+
+
+     
+
+   Marker USA Murgu Arrow Array   <br><hr><br>
+   At this time Marker USA Murgu Arrow Array cover 2000 Grids and to be extended need an
+    Strong Computer for. <br>
+    Marker USA Murgu Arrow Array needed 2 JavaScript programs , one to generate The Array 
+    and second to generate Collatz Patterns . <br><br>
+    At this time javascript program can generate Collatz Patterns for Positive Integers smallest 
+ then 5400 but a part of them will be partial - as a part of patern is out of our database . <br>
+ Repeat via a strong Server our array- database can be extinded to 200000 Grids or more- <br>and hope 
+ soon Google , or APPLE , or Intel , Or Cisco, or Microsoft will offer access to ONE. <br>
+ here now you can see and generate Collatz Patterns from what we have and soon if computers powers 
+ admit I will extend it to 1500 Grids.   </h3> <br><hr><br>
+
+
+ <div  class="box4" style="opacity: 94%;z-index: 1;">
+  <h3 class="box2 " style="font-size: 26px;color: black;opacity: 97%;z-index: 1;">
+To make an image or idea about - One-Dimension -  Marker USA Murgu Arrow Array - 
+Can see first 512 elements from 12000 if make a click down on BUTTON . <br>
+not any confusions- here Collatz Murgu Formulas value are exposed in Collatz Terms then 
+apparent loss Collatz Unicity. <br><hr><br> anyway can see all array into Javascript <br>
+Collatz Conjecture Enclosed into One-Dimensional Array is an H-Intel Success and to hope <br>
+Not The Last One as Science yet need H-Intel.
+  </h3> <br>
+
+
+<button id="btn1" type="button" > Show Marker USA Murgu Arrow Array </button> <br><hr><br>
+    <div class="panel1" id="panel1" >
+      
+</div >
+
+ </div> <br><hr><br>  
+
+
+<div  class="box4" style="opacity: 94%;z-index: 1;">
+<h3 class="box2 buttonra" style="font-size: 26px;color: black;opacity: 97%;z-index: 1;">
+  Marker USA Murgu Arrows born <br> Collatz Conjecture 1D Arry <br> now have 8000 Grids "only" 
+  , but can be extended and for an strong server can go to 4 000 000 GRIDS or even more.
+  <br> Is a result of 2 Javascript progams <br> <hr><br> Under Open Sources MIT License <br><hr><br>
+  And hope MIT ,or Apple , or Google , or Intel, Or CISCO, or Microsoft will 
+  offer a online server wich to use those Javascript hich to push array to maxim elements. <br><hr><br> 
+Here our program will have any limits as any Collatz patterns will fal out of this array. <br>
+Soon will try to extend the array , but will became heavy on generating Collatz Patterns. <br><hr><br>
+We let Collatz Patterns to be revealed into an alert , as you to can check if are correct. <br>
+This was tested with Opera.    
+</h3> <br><hr><br>
+For Mathematics <br>
+  Collatz Table2To3 or Murgu Table2To3 <br>
+  Solved Collatz Conjecture <br>
+  But For Public Infinity Table2To3 or Infinity Murgu Table2To3 <br>
+  CERTIFY via demonstrations Collatz Conjecture Solved by Murgu Table2To3 <br> <hr><br>
+  BUT MORE THEN THAT Brought and Reveal a New Science Tool <br><hr>
+  Collatz Conjecture One-Dimensional Array <br> Marker USA Murgu Arrow One-Dimensional Array <br><hr> 
+  Here wearing Collatz Conjecture - but - can be applied in ALL SCIENCE in approprited Issues . <br>
+  Down you can test this ,  via generating instant Collatz Paterns. <br><hr><br>
+  
+We chose "prompt" and after "Ok" "alert" for output , as output patterns to can be copied, and or , as to can be checked without Copy. <br>
+Also any patterns will be partial as are be evolving out of our <br>
+Collatz Conjecture One-Dimensional Array <br> 
+AND need extension. <br>
+Also please chose every time an Odd Positive Integer as to make the answer instant. <br><hr><br>
+</div><br><hr>
+ <div class="box2" style="font-size: 36px;z-index: 1; opacity: 93%; ">
+  
+  <label> 
+  Marker USA Murgu Arrays <br><hr> <br>
+Guarded  By Collatz Conjecture <br>
+Murgu Logical Eternal Triads Formulas <br>
+Are Collatz CONJECTURE Accurate Lens To Infinity <br> Limited now by our acctual Computational Powers ,<br>
+But day by day will evolve as our Conventional Science EVOLVE. <br> <hr>
+
+
+Chose an Positive Odd as to easy server of suplimentary work, please! <br>
+Chose an Positive Odd smaller then 47999 : <br><hr>
+<input type="number" id="numarul" name="numarul" min="1" max="47999" required style="border: #020202; border-style: ridge;border: solid 2px; " /> 
+
+</label> <br> <hr>
+<button  id="btn2" type="submit" value="Submit" style="border-radius: 0vmax;"> Show Collatz Pattern Nodes </button>
+<br><hr><br> <div class="panel2" id="panel2" >
+</div> <br> 
+
+ </div>
+  
+
+
+</div>
+   
+
+
+  
+
+
+
+
+
+   <!---    </div> content end  --> 
+  </div> <br> <hr><br>
+
+
+<!---  footer    -->
+
+
+<div class="footer box2" style="opacity: 92%;z-index: 1;">
+  <hr><br>
+ 
+
+  <h1 class="boxinvers buttonrr" style="font-size: 30px;" >      
+Collatz Table2To3 - Murgu Table2To3 . <br><hr><br>
+  </h1> <br> <hr><br>
+  <h2 >Under Humanity Natural Law Of Copyright </h2>
+    <h4 >& USA ISBN-978-1-63972-042-2</h4> 
+  <h2>Collatz Conjecture Solved and Brought any Beauty Logicals </h2> <br><hr><br>
+  The best One <br>
+  Marker USA Murgu Arrow ARRAY <br><hr><br>
+  Which enclosed Collatz Conjecture in an <br>
+  One-Dimension Array <br> but also <br>
+  <h1> <strong> <i> Only Human Can Image Collatz Conjecture <br>
+  Marker USA Murgu Arrow as Collatz Conjecture Pocket Map. <br>
+  Marker USA Murgu Arrow as Science New Tool (Good) <br>
+  Infinity_Per_6 as Number of Collatz Paterns. <br>
+  or (Infinity_Per_6 + 1) if Consider Unity Dead Node for Infinity. <br>
+  (&infin;/24) Number of Logical Dead Nodes wich fall direct in Unity. <br>
+</i> </strong> </h1> <hr><br>
+
+<p class="box3 buttonra" style="font-size: 30px;">
+
+Murgu Table2To3 enrich USA Science And Culture Dowry, then maybe  <br>
+ UNDER USA Science AND Culture Institutions Protection <br> AS <br>
+ USA H-Intel precious GOOD.
+</p><hr><br>
+
+</div>
+
+<!--                 -->
+
+  <!--   end       -->
+ </div>
+</body>
+</html>
+
