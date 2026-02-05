@@ -5,6 +5,7 @@
 # Murgu 1D Array - Theoretic can be extended to "Infinity Per 6" by an Javascript Generator. 
 # We are limited now and into future by our Computational Power - but - 
 # Computational Power Evolution can be linked now to Murgu 1D Array as METER and TESTER.
+# Functional Divergence maybe heavy task 
 # maybe important only for H_Intel proud state as 
 # Collatz Conjecture is Solved 
 # By Marker USA Murgu Arrows 
