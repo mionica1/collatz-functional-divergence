@@ -21,4 +21,5 @@ I’m looking for contributors who can help with:
 This repository is for exploration and tooling. If you believe there is a proof-related claim, please open an issue so we can document it clearly and check it step-by-step.
 
 ## License
-[Choose a license: MIT / Apache-2.0 / GPL-3.0]
+MIT
+
